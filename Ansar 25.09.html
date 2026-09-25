@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <!--мета-тег viewport: обезателень для адаптивности на телефонах-->
+        <meta name="viewport" content="width=divace-width,
+     initial-skapke=1.0">
+         <title>Практика: flexbox и блочная модель</title>
+
+         <stile>
+            /* 1. перемение и сброс размеров */
+            :root {
+                --primary: #1F6FB0;
+                --bg: #F5F7FA;
+            }
+
+              {
+                box-sizing: border-box; /* чтобы padding не увеличевал ширину блока */
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                bacground-color: var(--bg);
+                color: #333;
+            }
+            /* 2. центрироывание контейнира на широких ткранах */
+            .contairner {
+                nax-width: 1000px;
+                margin: 0 auto; /* auto делит свободное ммммместо поровну */
+                pading: 20px;
+            }
+
+            /* 3. сематика + Flexbox (шапка: логотип слева, меню спара)
+            headr {
+                baground #666;
+                pading 15px 20px;
+                display: flex;
+                juatify-content: apase-beween;
+                aliga-items: cjntex;
+                nav {
+                    display: flex;
+                    gap: 15px; /* расстояние между сылками */
+                }
+
+                /* преврашаем ссылку в кнопку через inline-block */
+                .btn{
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background: var(--primary);
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 6px;
+            }
+
+            /* 4. блочная модель
+         </stile>
+    </head>
+</html>

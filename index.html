@@ -1,117 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <!--мета-тег viewport: обезателень для адаптивности на телефонах-->
-        <meta name="viewport" content="width=divace-width,
-     initial-skapke=1.0">
-         <title>Практика: flexbox и блочная модель</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика: flexbox и блочная модель</title>
 
-         <style>
-            /* 1. перемение и сброс размеров */
-            :root {
-                --primary: #1F6FB0;
-                --bg: #F5F7FA;
-            }
+    <style>
+        :root {
+            --primary: #1F6FB0;
+            --bg: #F5F7FA;
+        }
 
-              {
-                box-sizing: border-box; /* чтобы padding не увеличевал ширину блока */
-                margin: 0;
-                padding: 0;
-            }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            body {
-                font-family: Arial, sans-serif;
-                bacground-color: var(--bg);
-                color: #333;
-            }
-            /* 2. центрироывание контейнира на широких ткранах */
-            .contairner {
-                nax-width: 1000px;
-                margin: 0 auto; /* auto делит свободное ммммместо поровну */
-                pading: 20px;
-            }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg);
+            color: #333;
+        }
 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #666;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
             header {
-                baground #666;
-                pading 15px 20px;
-                display: flex;
-                juatify-content: apase-beween;
-                aliga-items: cjntex;
-                nav {
-                    display: flex;
-                    gap: 15px; /* расстояние между сылками */
-                }
-
-                /* преврашаем ссылку в кнопку через inline-block */
-                .btn{
-                    display: inline-block;
-                    padding: 10px 20px;
-                    background: var(--primary);
-                    color: #fff;
-                    text-decoration: none;
-                    border-radius: 6px;
+                flex-direction: column;
+                gap: 10px;
             }
+        }
+    </style>
+</head>
+<body>
 
-             card {
-                 background: #fff;
-                 padding: 20px;
-                 border: 2px sollid var(--primary);
+    <header>
+        <h2>Сайт</h2>
+        <nav>
+            <a href="#">главная</a>
+            <a href="#">контакты</a>
+        </nav>
+    </header>
 
-                 border-radius: 8px:
-                box-hadow: 0 4px 10px rgba 
-                (0,0,0,0.1);
-                flex: 1;
-
-            }
-
-            .rov {
-                display: flex;
-                gap: 20px;
-                margian-top: 20px;
-                flex-wrap: wrap;
-            }
-
-             @media (max-width: 768px) {
-                 header {
-                     flex-direction:column;
-
-                     gap: 10px;
-                 }
-             }
-        </stile>
-    </head>
-    <body>
-
-        <!-- сематические теги -->
-             <header>
-                 <h2>сайт</h2>
-             </nav>
-                  <a href="#">главная</a>
-                  <a href="#">контакты</a>
-             </nav>
-        </header>
-
-        <main class="container">
-             <section>
-                 <h2>карточки с flexbox</h2>
-                 <div class="row">
-                     <div class="card">
-                         <h3>блок 1</h3>
-                         <p>благодоря flex: 1 они делят пространство
-
-                    </div>
+    <main class="container">
+        <section>
+            <h2>карточки с flexbox</h2>
+            <div class="row">
+                <div class="card">
+                    <h3>блок 1</h3>
+                    <p>благодаря flex: 1 они делят пространство</p>
+                </div>
             </div>
         </section>
 
-        <section style="margian-top: 30px;">
-             <a href="#" class="btn">кнопка (inline-block)</a>
-             </section>
-             </main>
+        <section style="margin-top: 30px;">
+            <a href="#" class="btn">кнопка (inline-block)</a>
+        </section>
+    </main>
 
-        </body>
-        </html>
-        
-            
-                    
-    
+</body>
+</html>
